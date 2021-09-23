@@ -44,7 +44,7 @@ deploy:
     bucket: springboot-build # s3버킷
     key: Spring-boot-for-web-service.zip
     bundle_type: zip
-    application: Spring-boot-for-web-service
+    application: webDB
     deployment_group: Spring-boot-for-web-service-group
     region:  ap-northeast-2
     wait-until-deployed: true
