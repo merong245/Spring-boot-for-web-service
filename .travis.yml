@@ -30,7 +30,7 @@ deploy:
     access_key_id: $AWS_ACCESS_KEY
     secret_access_key: $AWS_SECRET_KEY
 
-    bucket: springboot-build # s3버킷
+    bucket: springboot-bucket-build # s3버킷
     region: ap-northeast-2
     skip_cleanup: true
     acl: private # zip파일 접근을 private로
@@ -41,10 +41,10 @@ deploy:
     access_key_id: $AWS_ACCESS_KEY
     secret_access_key: $AWS_SECRET_KEY
 
-    bucket: springboot-build # s3버킷
+    bucket: springboot-bucket-build # s3버킷
     key: Spring-boot-for-web-service.zip
     bundle_type: zip
-    application: webDB
+    application: Spring-boot-for-web-service
     deployment_group: Spring-boot-for-web-service-group
     region:  ap-northeast-2
     wait-until-deployed: true
