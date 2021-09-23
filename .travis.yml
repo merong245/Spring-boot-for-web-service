@@ -22,7 +22,7 @@ script: "./gradlew clean build"
 before_deploy:
   - zip -r Spring-boot-for-web-service *
   - mkdir -p deploy
-  - mv Spring-boot-for-web-service.zi[ deploy/Spring-boot-for-web-service.zip
+  - mv Spring-boot-for-web-service.zip[ deploy/Spring-boot-for-web-service.zip
 
 deploy:
   - provider: s3
