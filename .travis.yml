@@ -17,8 +17,28 @@ cache:
 
 script: "./gradlew clean build"
 
-# CI 실행 완료; 메일로 알람
-notifications:
-  email:
-    recipients:
-      - merong245@gmail.com
+
+
+before_deploy:
+  - zip -r Spring-boot-for-web-service *
+  - mkdir -p deploy
+  - mv Spring-boot-for-web-service.zi[ deploy/Spring-boot-for-web-service.zip
+
+deploy:
+  - provider: s3
+    #travis repo에 설정된값
+    access_key_id: $AWS_ACCESS_KEY
+    secret_access_key: $AWS_SECRET_KEY
+
+    bucket: springboot-build # s3버킷
+    region: ap-northeast-2
+    skip_cleanup: true
+    acl: private # zip파일 접근을 private로
+    local_dir: deploy
+    wait-until-deployed: true
+
+    # CI 실행 완료; 메일로 알람
+    notifications:
+      email:
+        recipients:
+          - merong245@gmail.com
