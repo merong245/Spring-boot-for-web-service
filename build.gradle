@@ -4,8 +4,8 @@ plugins { // (1)
     id 'java'
 }
 
-group 'com.jojoldu.book'
-version '1.0.4-SNAPSHOT-'+new Date().format("yyyyMMddHHmmss")
+group 'Spring-boot-for-web-server-group'
+version '1.0.1-SNAPSHOT-'+new Date().format("yyyyMMddHHmmss")
 sourceCompatibility = 1.8
 
 repositories {
