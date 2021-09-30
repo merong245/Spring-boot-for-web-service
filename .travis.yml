@@ -20,7 +20,7 @@ script: "./gradlew clean build"
 before_deploy:
   - zip -r springboot.web.com *
   - mkdir -p deploy
-  - mv springboot.web.com.zip deploy/springboot.web.com.zip
+  - mv springboot.web.com.zip deploy/Spring-boot-for-web-service.zip
 
 #before_deploy:
 #  - mkdir -p before-deploy # zip에 포함시킬 파일들을 담을 디렉토리 생성
@@ -51,8 +51,9 @@ deploy:
     secret_access_key: $AWS_SECRET_KEY
 
     bucket: springboot-bucket-build # s3버킷
-    key: springboot.web.com.zip
+    key: Spring-boot-for-web-service.zip
     bundle_type: zip
+
     application: Spring-boot-for-web-service
     deployment_group: Spring-boot-for-web-service-group
     region:  ap-northeast-2
